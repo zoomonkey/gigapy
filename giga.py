@@ -98,16 +98,16 @@ if(__name__== "__main__"):
                 if(i == 0):
                     logging.info("run Ron")
                     main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
-                    time.sleep(220) # lets delay the right answer a bit
+                    time.sleep(200) # lets delay the right answer a bit
                 else:
                     call = getrandomcallsign()
-                    email = call + "@" + call + ".com"
+                    email = call + "@gmail.com"
                     phone = getrandomphone()
                     logging.info("run " + call)
                     main(call, email, phone)
             else:
                 logging.info("sleep then run N9YO")
-                time.sleep(200) # lets delay the right answer a bit
+                time.sleep(125) # lets delay the right answer a bit
                 main("N9YO", "codingisforyou@outlook.com", "636-542-8220")
                 break
             if(not iscorrect):
