@@ -3,4 +3,4 @@ CWD="$(pwd)"
 echo $CWD
 #python giga.py
 python giga.py
-python copyoutput.py
+python gigaout.py
