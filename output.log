@@ -88,3 +88,39 @@ dkd
 08/15/2019 05:09:15 AM - INFO: 4 is the right index!
 08/15/2019 05:09:15 AM - INFO: end  ---------------------------------------------
 >>>>>>> 06ba310fb787800f5099cc9343353122fa848631
+08/15/2019 11:22:57 AM - INFO: start ---------------------------------------------
+08/15/2019 11:22:57 AM - INFO: current index=1
+08/15/2019 11:22:57 AM - INFO: run Ron
+08/15/2019 11:23:02 AM - INFO: K4SFC
+08/15/2019 11:23:02 AM - INFO: ron.childress1@gmail.com
+08/15/2019 11:23:02 AM - INFO: 706-231-6547
+08/15/2019 11:23:03 AM - INFO: try guess
+08/15/2019 11:23:05 AM - INFO: Oops!  Already entered for today
+08/15/2019 11:23:51 AM - INFO: error occurred
+08/16/2019 05:03:02 AM - INFO: start ---------------------------------------------
+08/16/2019 05:03:02 AM - INFO: current index=1
+08/16/2019 05:03:02 AM - INFO: run Ron
+08/16/2019 05:03:08 AM - INFO: K4SFC
+08/16/2019 05:03:08 AM - INFO: ron.childress1@gmail.com
+08/16/2019 05:03:08 AM - INFO: 706-231-6547
+08/16/2019 05:03:08 AM - INFO: try guess
+08/16/2019 05:03:11 AM - INFO: Question has not been answered today.
+08/16/2019 05:03:14 AM - INFO: 1 is the right index!
+08/16/2019 05:06:34 AM - INFO: current index=1
+08/16/2019 05:06:34 AM - INFO: sleep then run N9YO
+08/16/2019 05:08:45 AM - INFO: N9YO
+08/16/2019 05:08:45 AM - INFO: codingisforyou@outlook.com
+08/16/2019 05:08:45 AM - INFO: 636-542-8220
+08/16/2019 05:08:46 AM - INFO: try guess
+08/16/2019 05:08:48 AM - INFO: Question has not been answered today.
+08/16/2019 05:08:51 AM - INFO: 1 is the right index!
+08/16/2019 05:08:51 AM - INFO: end  ---------------------------------------------
+08/16/2019 12:32:20 PM - INFO: start ---------------------------------------------
+08/16/2019 12:32:20 PM - INFO: current index=1
+08/16/2019 12:32:20 PM - INFO: run Ron
+08/16/2019 12:32:25 PM - INFO: K4SFC
+08/16/2019 12:32:25 PM - INFO: ron.childress1@gmail.com
+08/16/2019 12:32:25 PM - INFO: 706-231-6547
+08/16/2019 12:32:26 PM - INFO: try guess
+08/16/2019 12:32:28 PM - INFO: Oops!  Already entered for today
+08/16/2019 12:35:28 PM - INFO: error occurred
