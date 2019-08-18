@@ -33,11 +33,11 @@ def findcorrectindex(html):
         text = cells[0].get_text()
         if("Congratulations!" in text):
             iscorrect = True
-            logging.info(str(correctindex) + " is the right index!")
+            logging.info(str(correctindex) + " is the RIGHT index!")
             break
         elif("Sorry, that was incorrect!" in text):
             iscorrect = False
-            logging.info(str(correctindex) + " is the wrong index!")
+            logging.info(str(correctindex) + " is the WRONG index!")
             break
     return
 
@@ -51,7 +51,7 @@ def hasalreadybeendonetoday(html):
             logging.info("Oops!  Already entered for today")
             return True
         else:
-            logging.info("Question has not been answered today.")
+            logging.info("Question has NOT been answered today.")
         return False
     return
 
