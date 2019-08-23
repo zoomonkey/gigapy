@@ -1,0 +1,7 @@
+cd /home/pi/gigapy
+D="$(pwd)"
+echo $CWD
+
+python giga.py && python gigaout.py
+
+
