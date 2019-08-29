@@ -5,6 +5,8 @@ import logging
 import random
 import string
 
+_sleepdelay = 1
+
 logFile = 'output.log'
 logging.basicConfig( filename = logFile,filemode = 'a',level = logging.INFO,format = '%(asctime)s - %(levelname)s: %(message)s',\
                      datefmt = '%m/%d/%Y %I:%M:%S %p' )
@@ -33,11 +35,11 @@ def findcorrectindex(html):
         text = cells[0].get_text()
         if("Congratulations!" in text):
             iscorrect = True
-            logging.info(str(correctindex) + " is the RIGHT index!")
+            logging.info(str(correctindex) + " = RIGHT index!")
             break
         elif("Sorry, that was incorrect!" in text):
             iscorrect = False
-            logging.info(str(correctindex) + " is the WRONG index!")
+            logging.info(str(correctindex) + " = WRONG index")
             break
     return
 
@@ -90,15 +92,21 @@ def main(call, email, phone):
 if(__name__== "__main__"):
     try:
         logging.info("start ---------------------------------------------")
+        hasRonBeenRun = false
+
         correctindex = 1
         for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
-            print('running #' + str(correctindex))
             logging.info('current index=' + str(correctindex))
             if(not iscorrect and correctindex != 4):
                 if(i == 0):
-                    logging.info("run Ron")
+                    logging.info("run Rich Lim")
+                    main("KQ9L", "kq9l@arrl.net", "708-226-3300")
+                    time.sleep(_sleepdelay)
+                elif(i == 1):
+                    logging.info("run Ron seeking index 2")
                     main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
-                    time.sleep(615) # lets delay the right answer a bit
+                    hasRonBeenRun = true
+                    time.sleep(_sleepdelay)
                 else:
                     call = getrandomcallsign()
                     email = call + "@gmail.com"
@@ -106,8 +114,10 @@ if(__name__== "__main__"):
                     logging.info("run " + call)
                     main(call, email, phone)
             else:
-                logging.info("sleep then run N9YO")
-                time.sleep(1800) # lets delay the right answer a bit
+                if(hasRonBeenRun == false):
+                    main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
+
+                time.sleep(_sleepdelay)  # lets delay the right answer a bit
                 main("N9YO", "codingisforyou@outlook.com", "636-542-8220")
                 break
             if(not iscorrect):
