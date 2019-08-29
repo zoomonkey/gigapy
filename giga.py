@@ -92,7 +92,7 @@ def main(call, email, phone):
 if(__name__== "__main__"):
     try:
         logging.info("start ---------------------------------------------")
-        hasRonBeenRun = false
+        hasRonBeenRun = False
 
         correctindex = 1
         for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
@@ -105,7 +105,7 @@ if(__name__== "__main__"):
                 elif(i == 1):
                     logging.info("run Ron seeking index 2")
                     main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
-                    hasRonBeenRun = true
+                    hasRonBeenRun = True
                     time.sleep(_sleepdelay)
                 else:
                     call = getrandomcallsign()
@@ -114,7 +114,7 @@ if(__name__== "__main__"):
                     logging.info("run " + call)
                     main(call, email, phone)
             else:
-                if(hasRonBeenRun == false):
+                if(hasRonBeenRun == False):
                     main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
 
                 time.sleep(_sleepdelay)  # lets delay the right answer a bit
