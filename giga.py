@@ -5,7 +5,7 @@ import logging
 import random
 import string
 
-_sleepdelay = 1
+_sleepdelay = 360
 
 logFile = 'output.log'
 logging.basicConfig( filename = logFile,filemode = 'a',level = logging.INFO,format = '%(asctime)s - %(levelname)s: %(message)s',\
