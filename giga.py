@@ -5,7 +5,7 @@ import logging
 import random
 import string
 
-_sleepdelay = 720
+_sleepdelay = 1
 
 logFile = 'output.log'
 logging.basicConfig( filename = logFile,filemode = 'a',level = logging.INFO,format = '%(asctime)s - %(levelname)s: %(message)s',\
@@ -98,13 +98,9 @@ if(__name__== "__main__"):
         for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
             logging.info('current index=' + str(correctindex))
             if(not iscorrect and correctindex != 4):
-                call = getrandomcallsign()
-                email = call + "@gmail.com"
-                phone = getrandomphone()
- 
                 if(i == 0):
-                    logging.info("run " + call)
-                    main(call, email, phone)
+                    logging.info("run Rich Lim")
+                    main("KQ9L", "kq9l@arrl.net", "708-226-3300")
                     time.sleep(_sleepdelay)
                 elif(i == 1):
                     logging.info("run Ron seeking index 2")
@@ -112,6 +108,9 @@ if(__name__== "__main__"):
                     hasRonBeenRun = True
                     time.sleep(_sleepdelay)
                 else:
+                    call = getrandomcallsign()
+                    email = call + "@gmail.com"
+                    phone = getrandomphone()
                     logging.info("run " + call)
                     main(call, email, phone)
             else:
@@ -125,5 +124,4 @@ if(__name__== "__main__"):
                 correctindex += 1
         logging.info("end  ---------------------------------------------")
     except:
-        logging.info("error occurred")
-
+logging.info("error occurred")
