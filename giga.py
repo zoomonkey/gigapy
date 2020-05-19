@@ -4,8 +4,11 @@ import time
 import logging
 import random
 import string
+from random import seed
+from random import randint
 
-_sleepdelay = 1
+_n9yo_sleepdelay = 2  #10001 #3 hours
+_other_sleepdelay = randint(3, 5)
 
 logFile = 'output.log'
 logging.basicConfig( filename = logFile,filemode = 'a',level = logging.INFO,format = '%(asctime)s - %(levelname)s: %(message)s',\
@@ -14,9 +17,9 @@ iscorrect = False
 correctindex = 1
 
 def getrandomcallsign():
-    return  random.choice(string.ascii_letters) + str(random.randint(0,9)) + \
-        random.choice(string.ascii_letters) + random.choice(string.ascii_letters) + \
-         random.choice(string.ascii_letters)
+    return random.choice(string.ascii_letters).upper() + str(random.randint(0, 9)) + \
+        random.choice(string.ascii_letters).upper() + random.choice(string.ascii_letters).upper() + \
+        random.choice(string.ascii_letters).upper()
 def getrandomphone():
     return str(random.randint(1,500)) + "-" + str(random.randint(1,800)) + "-" + str(random.randint(1,9000))
 
@@ -60,6 +63,7 @@ def hasalreadybeendonetoday(html):
 def main(call, email, phone):
     global correctindex
     br = mechanize.Browser()
+    br.set_handle_robots(False)
     br.open('http://www.gigaparts.com/sweepstakes')
     br.select_form(predicate=select_form)
 
@@ -98,30 +102,20 @@ if(__name__== "__main__"):
         for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
             logging.info('current index=' + str(correctindex))
             if(not iscorrect and correctindex != 4):
-                if(i == 0):
-                    logging.info("run Rich Lim")
-                    main("KQ9L", "kq9l@arrl.net", "708-226-3300")
-                    time.sleep(_sleepdelay)
-                elif(i == 1):
-                    logging.info("run Ron seeking index 2")
-                    main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
-                    hasRonBeenRun = True
-                    time.sleep(_sleepdelay)
-                else:
-                    call = getrandomcallsign()
-                    email = call + "@gmail.com"
-                    phone = getrandomphone()
-                    logging.info("run " + call)
-                    main(call, email, phone)
-            else:
-                if(hasRonBeenRun == False):
-                    main("K4SFC", "ron.childress1@gmail.com", "706-231-6547")
+                time.sleep(_other_sleepdelay)
+                call = getrandomcallsign()
+                email = call + "@qrz.com"
+                phone = getrandomphone()
 
-                time.sleep(_sleepdelay)  # lets delay the right answer a bit
-                main("N9YO", "codingisforyou@outlook.com", "636-542-8220")
+                logging.info("run " + call)
+                main(call, email, phone)
+            else:
+                time.sleep(_n9yo_sleepdelay)
+                logging.info("run N9YO")
+                main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
                 break
             if(not iscorrect):
                 correctindex += 1
         logging.info("end  ---------------------------------------------")
     except:
-logging.info("error occurred")
+        logging.info("error occurred")
