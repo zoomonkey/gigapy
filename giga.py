@@ -7,8 +7,8 @@ import string
 from random import seed
 from random import randint
 
-_n9yo_sleepdelay = 2  #10001 #3 hours
-_other_sleepdelay = randint(3, 5)
+_n9yo_sleepdelay = 5501  #10001 #3 hours
+_other_sleepdelay = randint(360, 10000)
 
 logFile = 'output.log'
 logging.basicConfig( filename = logFile,filemode = 'a',level = logging.INFO,format = '%(asctime)s - %(levelname)s: %(message)s',\
