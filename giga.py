@@ -93,29 +93,46 @@ def main(call, email, phone):
         findcorrectindex(response)
     return
 
-if(__name__== "__main__"):
+
+if(__name__ == "__main__"):
     try:
         logging.info("start ---------------------------------------------")
-        hasRonBeenRun = False
 
-        correctindex = 1
-        for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
-            logging.info('current index=' + str(correctindex))
-            if(not iscorrect and correctindex != 4):
-                time.sleep(_other_sleepdelay)
-                call = getrandomcallsign()
-                email = call + "@qrz.com"
-                phone = getrandomphone()
+        time.sleep(randint(360, 5000))
+        main("K4SFC", "ron.childress1@gmail.com", "706 231 6547")
 
-                logging.info("run " + call)
-                main(call, email, phone)
-            else:
-                time.sleep(_n9yo_sleepdelay)
-                logging.info("run N9YO")
-                main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
-                break
-            if(not iscorrect):
-                correctindex += 1
+        time.sleep(randint(360, 15000))
+        main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
+
         logging.info("end  ---------------------------------------------")
     except:
         logging.info("error occurred")
+
+# decided to comment this out and simply run it once
+
+#if(__name__== "__main__"):
+#    try:
+#        logging.info("start ---------------------------------------------")
+#        hasRonBeenRun = False
+
+#        correctindex = 1
+#        for i in range(0, 4):  #loop only max 3 times!  if the index is at 4 no need to run it again
+#            logging.info('current index=' + str(correctindex))
+#                time.sleep(_other_sleepdelay)
+##            if(not iscorrect and correctindex != 4):
+#                call = getrandomcallsign()
+#                email = call + "@qrz.com"
+#                phone = getrandomphone()
+
+#                logging.info("run " + call)
+#                main(call, email, phone)
+#            else:
+#                time.sleep(_n9yo_sleepdelay)
+#                logging.info("run N9YO")
+#                main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
+#                break
+#            if(not iscorrect):
+#                correctindex += 1
+#        logging.info("end  ---------------------------------------------")
+#    except:
+#        logging.info("error occurred")
