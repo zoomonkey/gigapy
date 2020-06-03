@@ -104,7 +104,8 @@ if(__name__ == "__main__"):
         time.sleep(randint(360, 15000))
         if(not iscorrect):
             correctindex += 1
-            main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
+        
+        main("N9YO", "zoomonkey@gmail.com", "636-542-8220")
 
         logging.info("end  ---------------------------------------------")
     except:
